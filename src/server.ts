@@ -1,6 +1,6 @@
 import express from 'express'
-import { categoriesRoutes } from './routes/categories.routes'
-import { specificationsRoutes } from './routes/specifications.routes'
+
+import { router } from './routes'
 
 const app = express()
 const port = 3333
@@ -8,8 +8,7 @@ const port = 3333
 app.use(express.json())
 
 //ROUTES
-app.use('/categories', categoriesRoutes)
-app.use('/specifications', specificationsRoutes)
+app.use(router)
 
 app.listen(port, () => {
   console.log(`Servidor rodando na porta: ${port}`)
